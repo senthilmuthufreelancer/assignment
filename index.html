@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Phone Directory</title>
+<style>
+body {padding-top:50px} 
+</style> 
+</head>
+<body>
+
+<script language="javascript" type="text/javascript">
+<!--
+var x = 0;
+var x1 = 0;
+var x2 = 0;
+var array = Array();
+var array1 = Array();
+var delete_array = Array();
+
+ function IsEmpty(){ 
+
+                if(document.getElementById("text1").value == "")
+                {
+                    alert("Name Field is empty");
+	             return false;
+                   
+                }
+                if(document.getElementById("text2").value == "")
+                {
+                    alert("Phone Number Field is empty");
+                     return false;
+                    
+                }
+                add_element_to_array();
+                 return true;
+                
+            }
+
+
+
+function add_element_to_array()
+{
+ array[x] = document.getElementById("text1").value;
+ x++;
+ document.getElementById("text1").value = "";
+
+ array1[x1] = document.getElementById("text2").value;
+ x1++;
+ document.getElementById("text2").value = ""; 
+
+  document.getElementById("text1").value;
+ 
+
+ display_array();
+}
+
+function display_array()
+{
+   var e = "<hr/>";   
+    
+   for (var y=0; y<array.length; y++)
+   {
+
+
+
+      
+
+     e += "Name :  " + array[y] ;
+     e += '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + "Phone Number : "  + array1[y];
+
+
+     e +=  "<br/>";
+     delete_array[x2] = y;
+     x2++;   
+   }
+   
+   document.getElementById("Result").innerHTML = e;
+}
+  
+
+//-->
+</script>
+
+<table>
+  <tr>
+    <td> Name </td>
+    <td>  Phone Number </td> 
+  </tr>
+  <tr>
+      <td><input name="subscriber_name" type="text" id="text1"></input></td>
+      <td><input  name="subscriber_Phone_number" type="text" id="text2"></input></td>
+  </tr>
+</table>
+<input type="button" id="button1" value="Add" onclick="IsEmpty();"></input>
+<div id="Result"></div> 
+</body>
+</html>
